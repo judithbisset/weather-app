@@ -98,3 +98,25 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Cheddar");
+
+var description = [
+"src/images/cheddarScotland.jpg",
+"src/images/cheddarSleeping.jpg",
+"src/images/cheddarPhone.jpg",
+"src/images/cheddarForest.jpg",
+"src/images/cheddarDuck.jpg",
+"src/images/cheddarFlowers.jpg",
+"src/images/cheddarHouse.jpg",
+"src/images/cheddarHusband.jpg",
+"src/images/cheddarDog.jpg",
+"src/images/cheddarPostcards.jpg",
+"src/images/cheddarPub.jpg",
+"src/images/cheddarSandwich.jpg",
+"src/images/cheddarSubway.jpg",
+"src/images/cheddarRome.jpg",
+"src/images/cheddarPrague.jpg",
+"src/images/cheddarMountains.jpg"
+];
+var size = description.length;
+var x = Math.floor(size*Math.random())
+document.getElementById('image').src=description[x];
