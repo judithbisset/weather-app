@@ -17,10 +17,10 @@
 }
 #cheddar {
   font-weight: bold;
-  border:2px black solid;
-  width:fit-content; 
-  width:-webkit-fit-content; 
-  width:-moz-fit-content;
+  border: 2px black solid;
+  width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
 }
 h1,
 h2,
@@ -90,4 +90,13 @@ img {
 }
 a {
   text-decoration: none;
+}
+#git-hub {
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+}
+#git-hub-link {
+  text-decoration: underline;
+  color: black;
 }
