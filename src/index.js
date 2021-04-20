@@ -1,4 +1,4 @@
-// challenge 1
+// formating the date and time
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -25,7 +25,7 @@ let dateElement = document.querySelector("h2");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-// challenge 2
+// getting the city name to change
 function changeCity(event) {
   event.preventDefault();
   let input = document.querySelector("#city-input");
@@ -33,6 +33,7 @@ function changeCity(event) {
   h1.innerHTML = input.value;
   search(input.value);
 }
+// search for city
 
 function search(city) {
   let apiKey = "14851b7f540a88c1c818c45b5f539543";
@@ -43,15 +44,26 @@ function search(city) {
 let form = document.querySelector(".search");
 form.addEventListener("submit", changeCity);
 
+// show weather conditions in searched city
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = `${temperature}`;
+  let humidity = Math.round(response.data.main.humidity);
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}`;
+  let wind = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind}`;
+  let description = response.data.weather[0].main;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${description}`;
+  
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 }
-// extra challenge
+// display current location
 function handlePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -59,11 +71,21 @@ function handlePosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showLocationTemperature);
 }
-
+// show weather conditions in current location
 function showLocationTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = `${temperature}`;
+  let humidity = Math.round(response.data.main.humidity);
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${humidity}`;
+  let wind = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${wind}`;
+  let description = response.data.weather[0].main;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${description}`;
+  
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 }
@@ -75,7 +97,7 @@ function getCurrentPosition(event) {
 let locationButton = document.querySelector("#location");
 locationButton.addEventListener("click", getCurrentPosition);
 
-// challenge 3
+// convert to fahrenheit and convert back to celsius
 
 function changeToFahrenheit(event) {
   event.preventDefault();
@@ -96,8 +118,9 @@ function convertToCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
-
+// use dafault city Cheddar
 search("Cheddar");
+// change image upn refresh
 
 var description = [
 "src/images/cheddarScotland.jpg",
