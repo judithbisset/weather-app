@@ -4,7 +4,10 @@
   width: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
+  text-align: center;
+  margin: 0 auto;
 }
+
 h1,
 h2,
 p {
@@ -41,7 +44,7 @@ p {
   font-size: 35px;
 }
 img {
-  width: 600px;
+  width: 300px;
   display: block;
   text-align: center;
   margin: 0 auto;
@@ -83,9 +86,9 @@ a {
   animation: gradient 15s ease infinite;
   border: 1px solid #dadde1;
   padding: 15px;
+  max-width: 600px;
   margin: 20px auto;
   border-radius: 10px;
-  max-width: 600px;
 }
 
 @keyframes gradient {
