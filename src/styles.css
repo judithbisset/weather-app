@@ -13,15 +13,18 @@ body {
 #weather-app {
   margin-top: 40px;
   margin-bottom: 40px;
-  max-width: 650px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 900px;
+  width: 600px;
   border: none;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
 
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 20px;
   box-shadow: 10px 10px 20px 6px rgba(0, 0, 0, 0.3);
 }
@@ -42,7 +45,7 @@ h1,
 h2,
 p {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Oswald", sans-serif;
 }
 form {
   border: white;
@@ -92,6 +95,8 @@ img {
 #image-style {
   border: none;
   background-color: transparent;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .btn-primary {
@@ -108,7 +113,7 @@ a {
   text-decoration: none;
 }
 #git-hub {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   text-decoration: none;
 }
