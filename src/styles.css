@@ -31,7 +31,7 @@ body {
 
 #cheddar {
   font-weight: bold;
-  border: 3px black solid;
+  border: 3px #4a5c8e solid;
   width: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -66,7 +66,7 @@ p {
 }
 .row {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Oswald", sans-serif;
 }
 .fa-cloud-sun {
   color: grey;
@@ -92,6 +92,12 @@ img {
   border: none;
   font-size: 15px;
 }
+#forecast {
+  width: 650px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
 #image-style {
   border: none;
   background-color: transparent;
@@ -100,13 +106,21 @@ img {
 }
 
 .btn-primary {
-  color: #5dc2e0;
-  background-color: white;
+  color: #4a5c8e;
+  background-color: #4a5c8e;
+  font-family: "Oswald", sans-serif;
+}
+.form-control {
+  font-family: "Oswald", sans-serif;
+}
+.search {
+  border-radius: 10px;
 }
 #location {
   color: #5dc2e0;
   background-color: white;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 a {
