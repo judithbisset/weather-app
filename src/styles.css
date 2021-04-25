@@ -31,12 +31,17 @@ body {
 
 #cheddar {
   font-weight: bold;
+  font-size: 30px;
   border: 3px #4a5c8e solid;
   width: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   text-align: center;
   margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
   border-radius: 20px;
   box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
 }
@@ -75,6 +80,17 @@ p {
 .fa-cloud-sun-rain {
   color: orange;
   font-size: 35px;
+}
+#degree {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+#celsius,
+#fahrenheit {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
 img {
   width: 275px;
