@@ -56,11 +56,18 @@ form {
   border: white;
 }
 .fa-sun {
+  font-size: 20px;
   color: yellow;
-  font-size: 35px;
 }
 p {
   font-size: 20px;
+}
+#icon {
+  width: 80px;
+  display: inline;
+  position: relative;
+  top: -20px;
+  padding-right: 0;
 }
 .card-title {
   font-size: 25px;
@@ -68,6 +75,10 @@ p {
 }
 #date {
   font-size: 20px;
+}
+.clearfix {
+  padding-bottom: 5px;
+  margin-bottom: 0;
 }
 .row {
   text-align: center;
@@ -85,11 +96,12 @@ p {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
+  padding-bottom: 0;
 }
 #celsius,
 #fahrenheit {
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
   top: -34px;
 }
 img {
