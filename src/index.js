@@ -65,7 +65,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  
+  celsiusTemperature = response.data.main.temp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 }
@@ -92,6 +92,7 @@ function showLocationTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = `${description}`;
   
+  celsiusTemperature = response.data.main.temp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
 }
@@ -108,7 +109,10 @@ locationButton.addEventListener("click", getCurrentPosition);
 function changeToFahrenheit(event) {
   event.preventDefault();
   let degrees = document.querySelector("#degree");
-  degrees.innerHTML = Math.round((degrees.innerHTML * 9) / 5 + 32);
+  let fahrenheitTemperature = ((celsiusTemperature * 9) / 5 + 32);
+  degrees.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
@@ -117,11 +121,11 @@ fahrenheitLink.addEventListener("click", changeToFahrenheit);
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degree");
-  temperatureElement.innerHTML = Math.round(
-    ((temperatureElement.innerHTML - 32) * 5) / 9
-  );
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
-
+let celsiusTemperature = 0;
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 // use dafault city Cheddar

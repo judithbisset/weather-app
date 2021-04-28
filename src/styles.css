@@ -103,6 +103,14 @@ p {
   position: relative;
   font-size: 20px;
   top: -34px;
+  text-decoration: none;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
 img {
   width: 275px;
