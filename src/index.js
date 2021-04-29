@@ -68,6 +68,7 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
+  displayForecast();
 }
 // display current location
 function handlePosition(position) {
@@ -130,6 +131,34 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 // use dafault city Cheddar
 search("Cheddar");
+
+// display forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML =`<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function(day) {
+forecastHTML = forecastHTML + `<div class="col-2">
+          <div class="forecast-date">${day}</div>
+          <i class="fas fa-sun"></i>
+          <br />
+          <div class="forecast-temp">
+          <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+          </div>
+      </div>`;
+      
+  })
+  
+  forecastHTML = forecastHTML + `</div>`;
+      forecastElement.innerHTML = forecastHTML;
+  
+  
+      
+        
+       
+     
+}
+
 // change image upn refresh
 
 var description = [
