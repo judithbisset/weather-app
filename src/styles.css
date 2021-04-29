@@ -68,6 +68,8 @@ p {
   position: relative;
   top: -20px;
   padding-right: 0;
+  padding-bottom: 0;
+  margin: 0;
 }
 .card-title {
   font-size: 25px;
@@ -84,19 +86,20 @@ p {
   text-align: center;
   font-family: "Oswald", sans-serif;
 }
-.fa-cloud-sun {
-  color: grey;
-  font-size: 35px;
-}
-.fa-cloud-sun-rain {
-  color: orange;
-  font-size: 35px;
+#icon-setting {
+  padding-bottom: 0;
 }
 #degree {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
   padding-bottom: 0;
+  padding-top: 0;
+  margin: 0;
+  display: inline;
+}
+li {
+  text-align: center;
 }
 #celsius,
 #fahrenheit {
@@ -111,6 +114,20 @@ p {
 }
 .active:hover {
   text-decoration: none;
+}
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+#extra-information-weather {
+  padding-top: 0;
+  margin: 0;
+}
+.weather-info {
+  padding-bottom: 0;
+}
+#current-weather {
+  padding-bottom: 0;
 }
 img {
   width: 275px;

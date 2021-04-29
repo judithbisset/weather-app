@@ -58,22 +58,29 @@
           <div class="clearfix weather-temperature">
           <div class="card">
             <div class="card-body" id="current-weather">
-              <h1 class="card-title">Special title treatment</h1>
-              <h2 id="date">
+              <ul class="weather-info">
+                <li>
+              <h1 class="card-title">Special title treatment</h1></li>
+              <li><h2 id="date">
                 Tuesday 2:30 PM
-                <br />
+                
               
-              </h2>
-              <p><span id="description"></span></p>
-              <p>
-                <img src="" alt="Clear" id="icon" class="float-left" />
+              </h2></li>
+              <li>
+              <p><span id="description"></span></p></li>
+              <li>
+                <img src="" alt="Clear" id="icon" id="icon-setting" class="float-left" />
                 <span id="degree">9 </span>
                 <span  ><a href="" id="celsius" class="active">°C </a></span>
                 <span ><a href="" id="fahrenheit">|°F </a></span>
-              </p>
+              </li></ul>
               </div>
-              <p>Humidity: <span id="humidity">66</span>%</p>
-              <p>Wind: <span id="wind">3</span> km/h</p>
+              <div id="extra-information-weather">
+                <ul>
+              <li><p>Humidity: <span id="humidity">66</span>%</p></li>
+              <li><p>Wind: <span id="wind">3</span> km/h</p></li>
+              </ul>
+            </div>
               
             </div>
           </div>
@@ -92,45 +99,54 @@
       
       <br />
       <div class="card" style="width: 550px;">
-        
         <div class="card-body" id="forecast">
       <div class="row">
         
         <div class="col-2">
-          Wednesday
-          <br />
+          <div class="forecast-date">Wednesday</div>
           <i class="fas fa-sun"></i>
           <br />
-          12°C
+          <div class="forecast-temp">
+          <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+          </div>
         </div>
+
         <div class="col-2">
-          Thursday
-          <br />
-          <i class="fas fa-cloud-sun"></i>
-          <br />
-          13°C
-        </div>
-        <div class="col-2">
-          Friday
-          <br />
-          <i class="fas fa-cloud-sun"></i>
-          <br />
-          8°C
-        </div>
-        <div class="col-2">
-          Saturday
-          <br />
+          <div class="forecast-date">Wednesday</div>
           <i class="fas fa-sun"></i>
           <br />
-          14°C
+          <div class="forecast-temp">
+            <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+            </div>
         </div>
+
         <div class="col-2">
-          Sunday
+          <div class="forecast-date">Wednesday</div>
+        <i class="fas fa-sun"></i>
           <br />
-          <i class="fas fa-cloud-sun-rain"></i>
-          <br />
-          9°C
+          <div class="forecast-temp">
+            <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+            </div>
         </div>
+
+        <div class="col-2">
+          <div class="forecast-date">Wednesday</div>
+          <i class="fas fa-sun"></i>
+          <br />
+          <div class="forecast-temp">
+          <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="forecast-date">Wednesday</div>
+          <i class="fas fa-sun"></i>
+          <br />
+          <div class="forecast-temp">
+          <span class="forecast-max">12° </span><span class="forecast-min"> 9°</span>
+          </div>
+        </div>
+
       </div>
       </div>
       </div>
