@@ -44,6 +44,14 @@ function search(city) {
 let form = document.querySelector(".search");
 form.addEventListener("submit", changeCity);
 
+
+// show forecast
+function getForecast(coordinates) {
+console.log(coordinates);
+let apiKey = "14851b7f540a88c1c818c45b5f539543";
+let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
+}
 // show weather conditions in searched city
 function showTemperature(response) {
   console.log(response.data);
@@ -68,7 +76,8 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
-  displayForecast();
+  
+  getForecast(response.data.coord)
 }
 // display current location
 function handlePosition(position) {
@@ -77,6 +86,7 @@ function handlePosition(position) {
   let apiKey = "14851b7f540a88c1c818c45b5f539543";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showLocationTemperature);
+  
 }
 // show weather conditions in current location
 function showLocationTemperature(response) {
@@ -133,7 +143,8 @@ celsiusLink.addEventListener("click", convertToCelsius);
 search("Cheddar");
 
 // display forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML =`<div class="row">`;
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
