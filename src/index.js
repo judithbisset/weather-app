@@ -21,7 +21,7 @@ function formatDate(date) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
-let dateElement = document.querySelector("h2");
+let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
@@ -106,7 +106,7 @@ function showLocationTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
-  
+
   getForecast(response.data.coord)
 }
 function getCurrentPosition(event) {
