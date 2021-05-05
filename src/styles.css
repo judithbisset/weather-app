@@ -136,6 +136,12 @@ ul {
   margin: 0;
   border: none;
   font-size: 15px;
+  font-weight: bolder;
+}
+#basic-info {
+  border-radius: 30px;
+  background-color: transparent;
+  border: none;
 }
 #forecast {
   width: 650px;
@@ -149,7 +155,10 @@ ul {
   padding-right: 0;
   padding-left: 0;
 }
-
+.weather-forecast {
+  font-weight: bold;
+  color: black;
+}
 .btn-primary {
   color: #4a5c8e;
   background-color: #4a5c8e;
