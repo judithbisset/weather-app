@@ -52,6 +52,7 @@ let apiKey = "14851b7f540a88c1c818c45b5f539543";
 let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayForecast);
 }
+
 // show weather conditions in searched city
 function showTemperature(response) {
   console.log(response.data);
@@ -79,6 +80,7 @@ function showTemperature(response) {
   
   getForecast(response.data.coord)
 }
+
 // display current location
 function handlePosition(position) {
   let lat = position.coords.latitude;
@@ -88,6 +90,7 @@ function handlePosition(position) {
   axios.get(apiUrl).then(showLocationTemperature);
   
 }
+
 // show weather conditions in current location
 function showLocationTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -109,6 +112,8 @@ function showLocationTemperature(response) {
 
   getForecast(response.data.coord)
 }
+
+// retrieve the current position
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
@@ -118,7 +123,6 @@ let locationButton = document.querySelector("#location");
 locationButton.addEventListener("click", getCurrentPosition);
 
 // convert to fahrenheit and convert back to celsius
-
 function changeToFahrenheit(event) {
   event.preventDefault();
   let degrees = document.querySelector("#degree");
@@ -141,10 +145,11 @@ function convertToCelsius(event) {
 let celsiusTemperature = 0;
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
-// use dafault city Cheddar
+
+// use default city Cheddar(UK)
 search("Cheddar");
 
-// get the day in the right format
+// display day in the right format
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -159,6 +164,7 @@ let days = [
   ];
 return days[day];
 }
+
 // display forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -184,14 +190,11 @@ forecastHTML = forecastHTML + `<div class="col-2">
   forecastHTML = forecastHTML + `</div>`;
       forecastElement.innerHTML = forecastHTML;
   
-  
       
-        
-       
      
 }
 
-// change image upn refresh
+// change Cheddar image upon refresh, included this so users can see a different image of the little duck everytime they use the app
 
 var description = [
 "src/images/cheddarScotland.jpg",
